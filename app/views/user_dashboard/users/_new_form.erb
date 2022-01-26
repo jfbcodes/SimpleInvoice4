@@ -1,0 +1,9 @@
+<%= turbo_frame_tag "user-new" do %>
+<h3>
+  New User
+  </h3>
+  <%= form_with model:  user, url: user_dashboard_users_path(), method: "post" do  |f| %>
+    <%=  render partial: "user_dashboard/users/form",
+      locals: { user: user , f: f} %>
+  <% end %>
+<% end %>

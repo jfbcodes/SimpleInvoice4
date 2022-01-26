@@ -1,0 +1,44 @@
+<%= turbo_frame_tag "users-list"   do %>
+  <div class="container-fluid scaffold-list">
+    <h4>USERS</h4>
+
+    
+
+    
+      
+        <div class="row scaffold-heading-row">
+          <div class='col-md-2'>Email</div>
+<div class='col-md-2'>Name</div>
+          
+            
+            
+
+            
+            <div class=" scaffold-col-heading col-sm-6" >
+              <strong>
+                Invoices
+              </strong>
+            </div>
+          
+          
+
+          
+
+          <div class=' scaffold-col-heading scaffold-col-heading-buttons col-md-2' >
+
+          </div>
+        </div>
+      
+
+      <% if users.empty? %>
+    <div>
+        None
+    </div>
+      <% end %>
+      <% users.each do |user| %>
+        <%= render partial: 'user_dashboard/users/line', locals: {user: user } %>
+      <% end %>
+    <% if users.respond_to?(:total_pages) %><%= paginate(users) %> <% end %>
+  
+  </div>
+<% end %>

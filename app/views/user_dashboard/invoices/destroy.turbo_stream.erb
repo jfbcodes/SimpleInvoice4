@@ -1,0 +1,4 @@
+<%= turbo_stream.replace "invoices-list__user-#{@user.id}" do %>
+  <%= render partial: "list", locals: {invoices: @invoices , 
+    nested_for: "user-#{@user.id}" , user: @user}  %>
+<% end %>

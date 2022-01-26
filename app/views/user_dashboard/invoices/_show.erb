@@ -1,0 +1,18 @@
+<div class='col-md-2'><%= invoice.number %></div>
+
+
+
+
+<div class=" scaffold-line-buttons  col-md-2" >
+  
+
+  
+    <%= form_with url: user_dashboard_user_invoice_path(user,invoice), html: {data: {'turbo-confirm': "Are you sure you want to delete #{ invoice.number }?"}, style: "display: inline-block;"}, method: :delete do |f| %>
+      <%= f.submit "Delete".html_safe,  class: "delete-invoice-button btn btn-primary btn-sm" %>
+    <% end %>
+  
+
+  
+  <%= link_to "Edit <i class='fa fa-1x fa-list-alt'></i>".html_safe, edit_user_dashboard_user_invoice_path(user,invoice), disable_with: "Loading...", class: "edit-invoice-button btn btn-primary btn-sm" %>
+  
+</div>

@@ -1,0 +1,9 @@
+<%= turbo_frame_tag "invoice-new" do %>
+<h3>
+  New Invoice
+  </h3>
+  <%= form_with model:  invoice, url: user_dashboard_user_invoices_path(@user), method: "post" do  |f| %>
+    <%=  render partial: "user_dashboard/invoices/form",
+      locals: { invoice: invoice , user: user, f: f} %>
+  <% end %>
+<% end %>

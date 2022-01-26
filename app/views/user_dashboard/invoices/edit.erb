@@ -1,0 +1,20 @@
+<%= link_to "<i class='fa fa-arrow-circle-left  2x'></i> Back to list".html_safe, user_dashboard_user_invoices_path %>
+
+<%= turbo_frame_tag "invoice__#{@invoice.id}" do  %>
+
+  <div class="cell editable" style="position: relative;">
+
+    <% if @invoice.errors.any? %>
+      <%= render(partial: "user_dashboard/errors", locals: {resource: @invoice }) %>
+    <% end %>
+
+    <h2>Editing <%= @invoice.number %></h2>
+    <%= form_with model: @invoice, url: user_dashboard_user_invoice_path(@user, @invoice) do |f| %>
+    <%=  render partial: "form",  locals: {:invoice => @invoice, f: f} %>
+    <% end %>
+
+  </div>
+
+<% end %>
+
+

@@ -1,0 +1,32 @@
+<%= turbo_frame_tag "invoices-list" + ('__' + nested_for)  do %>
+  <div class="container-fluid scaffold-list">
+    
+
+    <%= render partial: "user_dashboard/invoices/new_button", locals: {user: user}%><br />
+
+    
+      
+        <div class="row scaffold-heading-row">
+          <div class='col-md-2'>Number</div>
+          
+
+          
+
+          <div class=' scaffold-col-heading scaffold-col-heading-buttons col-md-2' >
+
+          </div>
+        </div>
+      
+
+      <% if invoices.empty? %>
+    <div>
+        None
+    </div>
+      <% end %>
+      <% invoices.each do |invoice| %>
+        <%= render partial: 'user_dashboard/invoices/line', locals: {invoice: invoice, user: user, nested_for: nested_for } %>
+      <% end %>
+    <% if invoices.respond_to?(:total_pages) %><%= paginate(invoices) %> <% end %>
+  
+  </div>
+<% end %>
