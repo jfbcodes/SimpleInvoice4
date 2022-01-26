@@ -21,22 +21,7 @@ describe "interaction for UserDashboard::UsersController", type: :feature do
     end
   end
 
-  describe "new & create" do
-    it "should create a new User" do
-      visit user_dashboard_users_path
-      click_link "New User"
-      expect(page).to have_selector(:xpath, './/h3[contains(., "New User")]')
 
-      new_email = 'new_test-email@nowhere.com' 
-      find("[name='user[email]']").fill_in(with: new_email)
-      new_name = 'new_test-email@nowhere.com' 
-      find("[name='user[name]']").fill_in(with: new_name)
-      click_button "Save"
-      expect(page).to have_content("Successfully created")
-      expect(page).to have_content(new_email)
-      expect(page).to have_content(new_name)
-    end
-  end
 
 
   describe "edit & update" do
