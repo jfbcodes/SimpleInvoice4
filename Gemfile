@@ -79,3 +79,5 @@ gem 'hot-glue', path: "/Users/jason/Work/Hot_Glue/hot-glue-private"
 gem 'devise', branch: 'main', git: 'https://github.com/heartcombo/devise.git'
 
 gem 'bootstrap', '~> 5.1.3'
+
+gem "byebug"
