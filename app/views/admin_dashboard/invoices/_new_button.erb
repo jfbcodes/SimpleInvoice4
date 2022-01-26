@@ -1,0 +1,5 @@
+<%= turbo_frame_tag "invoice-new" do %>
+  <div>
+    <%= link_to "New Invoice",  new_admin_dashboard_user_invoice_path(user.id), disable_with: "Loading...", class: "new-invoice-button btn btn-primary pull-right btn-sm " %>
+  </div>
+<% end %>

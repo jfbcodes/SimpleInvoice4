@@ -1,0 +1,11 @@
+
+<%= turbo_frame_tag "user__#{ user.id }" do  %>
+  <div class='row scaffold-row' data-id='<%= user.id %>' data-edit='false'>
+    <%= render partial: 'admin_dashboard/users/show', locals: { user: user } %>
+
+  </div>
+<% end %>
+
+
+
+

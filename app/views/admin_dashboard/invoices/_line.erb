@@ -1,0 +1,11 @@
+
+<%= turbo_frame_tag "invoice__#{ invoice.id }" do  %>
+  <div class='row scaffold-row' data-id='<%= invoice.id %>' data-edit='false'>
+    <%= render partial: 'admin_dashboard/invoices/show', locals: { invoice: invoice, user: user, nested_for: "user-#{user.id}" } %>
+
+  </div>
+<% end %>
+
+
+
+
