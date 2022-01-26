@@ -7,18 +7,13 @@ class UserDashboard::UsersController < UserDashboard::BaseController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
   after_action -> { flash.discard }, if: -> { request.format.symbol ==  :turbo_stream }
 
-
-  
-
-
-
+   
   def load_user
     @user = current_user
   end
 
   def load_all_users
     
-      
     @users = User.where(id: current_user.id) # returns iterable even though this user is anly allowed access to themselves
     
   end

@@ -10,16 +10,10 @@ class AdminDashboard::InvoicesController < AdminDashboard::BaseController
   after_action -> { flash.discard }, if: -> { request.format.symbol ==  :turbo_stream }
 
   def user
-    
-     @user ||= User.find(params[:user_id]) 
+    @user ||= User.find(params[:user_id]) 
   end
   
-
-   
-
-  
-
-
+     
 
   def load_invoice
     @invoice = user.invoices.find(params[:id])
@@ -27,7 +21,9 @@ class AdminDashboard::InvoicesController < AdminDashboard::BaseController
   
 
   def load_all_invoices
+    
     @invoices = user.invoices.page(params[:page])
+    
   end
 
   def index

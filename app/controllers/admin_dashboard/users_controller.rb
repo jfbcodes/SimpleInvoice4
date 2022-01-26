@@ -7,10 +7,7 @@ class AdminDashboard::UsersController < AdminDashboard::BaseController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
   after_action -> { flash.discard }, if: -> { request.format.symbol ==  :turbo_stream }
 
-
-  
-
-
+   
 
   def load_user
     @user = User.find(params[:id])
@@ -18,7 +15,9 @@ class AdminDashboard::UsersController < AdminDashboard::BaseController
   
 
   def load_all_users
+    
     @users = User.page(params[:page])
+    
   end
 
   def index

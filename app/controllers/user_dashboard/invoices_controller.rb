@@ -10,17 +10,10 @@ class UserDashboard::InvoicesController < UserDashboard::BaseController
   after_action -> { flash.discard }, if: -> { request.format.symbol ==  :turbo_stream }
 
   def user
-    
-     @user ||= current_user.users.find(params[:user_id])
-    
+    @user ||= current_user 
   end
   
-
-   
-
-  
-
-
+     
 
   def load_invoice
     @invoice = user.invoices.find(params[:id])
