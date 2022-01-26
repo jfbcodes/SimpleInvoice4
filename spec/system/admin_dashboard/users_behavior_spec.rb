@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "interaction for AdminDashboard::UsersController", type: :feature do
   include HotGlue::ControllerHelper
-    #HOTGLUE-SAVESTART
+  #HOTGLUE-SAVESTART
   #HOTGLUE-END
   
   

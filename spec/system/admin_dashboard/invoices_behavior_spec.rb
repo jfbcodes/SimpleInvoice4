@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "interaction for AdminDashboard::InvoicesController", type: :feature do
   include HotGlue::ControllerHelper
-    #HOTGLUE-SAVESTART
+  #HOTGLUE-SAVESTART
   #HOTGLUE-END
   
   
@@ -23,11 +23,10 @@ describe "interaction for AdminDashboard::InvoicesController", type: :feature do
       click_link "New Invoice"
       expect(page).to have_selector(:xpath, './/h3[contains(., "New Invoice")]')
 
-      new_number = 'new_test-email@nowhere.com' 
-      find("[name='invoice[number]']").fill_in(with: new_number)
+
       click_button "Save"
       expect(page).to have_content("Successfully created")
-      expect(page).to have_content(new_number)
+      
     end
   end
 
@@ -38,11 +37,10 @@ describe "interaction for AdminDashboard::InvoicesController", type: :feature do
       find("a.edit-invoice-button[href='/admin_dashboard/invoices/#{invoice1.id}/edit']").click
 
       expect(page).to have_content("Editing #{invoice1.number.squish || "(no name)"}")
-      new_number = FFaker::Lorem.paragraphs(1).join 
-      find("input[name='invoice[number]']").fill_in(with: new_number)
+
       click_button "Save"
       within("turbo-frame#invoice__#{invoice1.id} ") do
-        expect(page).to have_content(new_number)
+
       end
     end
   end 
