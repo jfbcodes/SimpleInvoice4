@@ -1,6 +1,5 @@
-= Built Using
+# Built Using
 
-![Hot Glue Glue Gun](https://user-images.githubusercontent.com/59002/151626021-9399f7fc-5e14-4d82-962e-7903d9449782.png)
 ![Hot Glue Vert](https://user-images.githubusercontent.com/59002/151626041-ab1c2558-7c38-4f02-9c1f-901df940bcd8.png)
 
 
