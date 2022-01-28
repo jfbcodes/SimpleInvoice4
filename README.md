@@ -4,7 +4,7 @@
 
 
 Admin dashboard -- can see all records
-![hot-glue047-example1](https://user-images.githubusercontent.com/59002/151625803-bfcd3d97-2d4f-47f5-a578-e3a5f525fa7a.gif)
+![https://github.com/jasonfb/hot-glue](https://user-images.githubusercontent.com/59002/151625803-bfcd3d97-2d4f-47f5-a578-e3a5f525fa7a.gif)
 
 
 
